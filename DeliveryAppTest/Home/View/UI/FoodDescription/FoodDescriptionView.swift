@@ -18,8 +18,9 @@ struct FoodDescriptionView: View {
                 HStack {
                   Spacer()
                 }
-                Image(item.imageName)
-                    .resizable()
+                AsyncImage(url: URL(string: item.imageName)!,
+                           placeholder: { Text("Loading ...") },
+                           image: { Image(uiImage: $0).resizable() })
                     .scaledToFit()
                     .frame(width: 240, height: 240)
                     .shadow(radius: 20)
@@ -97,7 +98,7 @@ struct DescriptionView: View {
 }
 
 struct TopingView: View {
-    let toppingImg: [String] = ["sauce", "pepper", "cheese", "onion"]
+    let toppingImg: [String] = [ImageURLs.cheese.rawValue, ImageURLs.sauce.rawValue, ImageURLs.pepper.rawValue, ImageURLs.onion.rawValue]
     var body: some View {
         VStack {
             HStack {
@@ -108,8 +109,9 @@ struct TopingView: View {
             }
             HStack {
                 ForEach(toppingImg, id: \.self) { imageName in
-                    Image(imageName)
-                        .resizable()
+                    AsyncImage(url: URL(string: imageName)!,
+                               placeholder: { Text("Loading ...") },
+                               image: { Image(uiImage: $0).resizable() })
                         .background(Color("shadowGray").opacity(0.4))
                         .frame(width: 80, height: 80)
                         .cornerRadius(10.0)

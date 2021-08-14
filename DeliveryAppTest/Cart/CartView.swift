@@ -28,8 +28,9 @@ struct CartView: View {
 struct CartItem: View {
     var body: some View {
         HStack {
-            Image("chickenBurger")
-                .resizable()
+            AsyncImage(url: URL(string: "https://www.hackingwithswift.com/img/paul.png")!,
+                       placeholder: { Text("Loading ...") },
+                       image: { Image(uiImage: $0).resizable() })
                 .scaledToFit()
                 .frame(width: 100.0, height: 100.0)
                 .padding([.top, .bottom])

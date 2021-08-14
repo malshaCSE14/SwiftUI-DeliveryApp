@@ -9,17 +9,18 @@ import SwiftUI
 
 struct FoodCategoriesView: View {
     let foodCategories: [FoodCategory] = [
-        FoodCategory(name: "Baverages", imageName: "coke", color: Color.orange.opacity(0.5), imageWidth: 38),
-        FoodCategory(name: "Snacks", imageName: "nuggets", color: Color.yellow.opacity(0.5), imageWidth: 45),
-        FoodCategory(name: "Chicken Burger", imageName: "chickenBurger", color: Color.secondary.opacity(0.5), imageWidth: 56)
+        FoodCategory(name: "Baverages", imageName: "https://www.hackingwithswift.com/img/paul.png", color: Color.orange.opacity(0.5), imageWidth: 38),
+        FoodCategory(name: "Snacks", imageName: "https://www.hackingwithswift.com/img/paul.png", color: Color.yellow.opacity(0.5), imageWidth: 45),
+        FoodCategory(name: "Chicken Burger", imageName: "https://www.hackingwithswift.com/img/paul.png", color: Color.secondary.opacity(0.5), imageWidth: 56)
     ]
     var body: some View {
         ScrollView(.horizontal) {
             HStack{
                 ForEach(foodCategories) { category in
                     HStack {
-                        Image(category.imageName)
-                            .resizable()
+                        AsyncImage(url: URL(string: category.imageName)!,
+                                   placeholder: { Text("Loading ...") },
+                                   image: { Image(uiImage: $0).resizable() })
                             .frame(width: category.imageWidth, height: 55.0)
                         Text(category.name)
                     }

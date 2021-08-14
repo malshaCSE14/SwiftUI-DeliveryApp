@@ -19,8 +19,8 @@ extension HomeView {
         
         func loadSearchResults() {
             self.foodItems = [
-                FoodCard(name: "Beef Steak", imageName: "beefSteak", introduction: "into", description: "desc", price: 10),
-                FoodCard(name: "Mushroom Pizza", imageName: "mushroomPizza", introduction: "into", description: "desc", price: 15)
+                FoodCard(name: "Beef Steak", imageName: "https://www.hackingwithswift.com/img/paul.png", introduction: "into", description: "desc", price: 10),
+                FoodCard(name: "Mushroom Pizza", imageName: "https://www.hackingwithswift.com/img/paul.png", introduction: "into", description: "desc", price: 15)
             ]
         }
     }

@@ -11,16 +11,17 @@ struct PopularItemsView: View {
     @State private var rating = 4
     var body: some View {
         let foodCards: [FoodCard] = [
-            FoodCard(name: "Beef Steak", imageName: "beefSteak", introduction: "BB’s double beef patty (340g)", description: "desc", price: 10.0),
-            FoodCard(name: "Mushroom Pizza", imageName: "mushroomPizza", introduction: "qwagrzfverty", description: "desc", price: 12.0),
-            FoodCard(name: "Burger", imageName: "chickenBurger", introduction: "qwezfdcrty", description: "desc", price: 14.0)
+            FoodCard(name: "Beef Steak", imageName: "https://www.hackingwithswift.com/img/paul.png", introduction: "BB’s double beef patty (340g)", description: "desc", price: 10.0),
+            FoodCard(name: "Mushroom Pizza", imageName: "https://www.hackingwithswift.com/img/paul.png", introduction: "qwagrzfverty", description: "desc", price: 12.0),
+            FoodCard(name: "Burger", imageName: "https://www.hackingwithswift.com/img/paul.png", introduction: "qwezfdcrty", description: "desc", price: 14.0)
         ]
         ScrollView(.horizontal) {
             HStack{
                 ForEach(foodCards) { foodCard in
                     HStack {
-                        Image(foodCard.imageName)
-                            .resizable()
+                        AsyncImage(url: URL(string: foodCard.imageName)!,
+                                   placeholder: { Text("Loading ...") },
+                                   image: { Image(uiImage: $0).resizable() })
                             .scaledToFit()
                             .frame(width: 70, height: 70)
                         VStack {

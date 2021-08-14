@@ -10,6 +10,7 @@
 		F111AA34268621EE008A7C50 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111AA33268621EE008A7C50 /* CartView.swift */; };
 		F111AA3A268635EE008A7C50 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111AA39268635EE008A7C50 /* FavouritesView.swift */; };
 		F11F4E42268C524500EC90A5 /* FoodDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11F4E41268C524500EC90A5 /* FoodDescriptionView.swift */; };
+		F12AF74326C6867400BE4B8D /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AF74226C6867400BE4B8D /* AsyncImage.swift */; };
 		F1526DB12686D82800E9194B /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1526DB02686D82800E9194B /* FoodCategory.swift */; };
 		F1526DB42686D8DC00E9194B /* FoodCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1526DB32686D8DC00E9194B /* FoodCard.swift */; };
 		F1526DB92686E26C00E9194B /* HomeVieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1526DB82686E26C00E9194B /* HomeVieModel.swift */; };
@@ -17,6 +18,7 @@
 		F1526DC32688660700E9194B /* FoodCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1526DC22688660700E9194B /* FoodCategoriesView.swift */; };
 		F1526DC62688664400E9194B /* FoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1526DC52688664400E9194B /* FoodCardView.swift */; };
 		F1526DCA2688669000E9194B /* PopularItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1526DC92688669000E9194B /* PopularItemsView.swift */; };
+		F19E827826C78EBE0077F80C /* ImageURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E827726C78EBE0077F80C /* ImageURLs.swift */; };
 		F1A35F7026637A72000D6243 /* MyOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A35F6F26637A72000D6243 /* MyOrderView.swift */; };
 		F1A35F7426637B75000D6243 /* DetailedFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A35F7326637B75000D6243 /* DetailedFoodView.swift */; };
 		F1A35F7726637C94000D6243 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A35F7626637C94000D6243 /* HomeView.swift */; };
@@ -31,6 +33,7 @@
 		F111AA33268621EE008A7C50 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		F111AA39268635EE008A7C50 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 		F11F4E41268C524500EC90A5 /* FoodDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDescriptionView.swift; sourceTree = "<group>"; };
+		F12AF74226C6867400BE4B8D /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		F1526DB02686D82800E9194B /* FoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
 		F1526DB32686D8DC00E9194B /* FoodCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCard.swift; sourceTree = "<group>"; };
 		F1526DB82686E26C00E9194B /* HomeVieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVieModel.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		F1526DC22688660700E9194B /* FoodCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoriesView.swift; sourceTree = "<group>"; };
 		F1526DC52688664400E9194B /* FoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardView.swift; sourceTree = "<group>"; };
 		F1526DC92688669000E9194B /* PopularItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularItemsView.swift; sourceTree = "<group>"; };
+		F19E827726C78EBE0077F80C /* ImageURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLs.swift; sourceTree = "<group>"; };
 		F1A35F6F26637A72000D6243 /* MyOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderView.swift; sourceTree = "<group>"; };
 		F1A35F7326637B75000D6243 /* DetailedFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedFoodView.swift; sourceTree = "<group>"; };
 		F1A35F7626637C94000D6243 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -113,6 +117,15 @@
 			path = FoodDescription;
 			sourceTree = "<group>";
 		};
+		F12AF74126C6865900BE4B8D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F12AF74226C6867400BE4B8D /* AsyncImage.swift */,
+				F19E827726C78EBE0077F80C /* ImageURLs.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		F1526DAE2686D7EC00E9194B /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +180,7 @@
 		F1FC5AAD2662180E00E841AD /* DeliveryAppTest */ = {
 			isa = PBXGroup;
 			children = (
+				F12AF74126C6865900BE4B8D /* Utils */,
 				F111AA4226863852008A7C50 /* Home */,
 				F111AA3D2686365D008A7C50 /* Favourites */,
 				F111AA3E26863668008A7C50 /* Cart */,
@@ -272,7 +286,9 @@
 				F1526DB92686E26C00E9194B /* HomeVieModel.swift in Sources */,
 				F11F4E42268C524500EC90A5 /* FoodDescriptionView.swift in Sources */,
 				F1FC5AAF2662180E00E841AD /* DeliveryAppTestApp.swift in Sources */,
+				F19E827826C78EBE0077F80C /* ImageURLs.swift in Sources */,
 				F1A35F7026637A72000D6243 /* MyOrderView.swift in Sources */,
+				F12AF74326C6867400BE4B8D /* AsyncImage.swift in Sources */,
 				F1526DB42686D8DC00E9194B /* FoodCard.swift in Sources */,
 				F1A35F7B2663C45B000D6243 /* ProfileView.swift in Sources */,
 				F1A35F7726637C94000D6243 /* HomeView.swift in Sources */,

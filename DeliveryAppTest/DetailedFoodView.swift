@@ -11,7 +11,9 @@ struct DetailedFoodView: View {
     var body: some View {
         VStack {
             Spacer()
-            Image("chickenBurger")
+            AsyncImage(url: URL(string: "https://www.hackingwithswift.com/img/paul.png")!,
+                       placeholder: { Text("Loading ...") },
+                       image: { Image(uiImage: $0).resizable() })
             Text("The burger description")
                 .padding()
             Spacer()
