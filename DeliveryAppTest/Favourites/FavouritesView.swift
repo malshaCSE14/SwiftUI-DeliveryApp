@@ -15,12 +15,12 @@ struct FavouritesView: View {
                 .font(.title)
             ScrollView {
                 VStack {
-                    FoodItem()
-                    FoodItem()
-                    FoodItem()
+                    //                    FoodItem()
+                    //                    FoodItem()
+                    //                    FoodItem()
                 }
             }
-            ProceedButton()
+            //            ProceedButton()
         }
     }
 }

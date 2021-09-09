@@ -7,16 +7,18 @@
 
 import SwiftUI
 
+public var items = [FoodCard]()
+
 struct FoodDescriptionView: View {
     let item: FoodCard
-    // MARK: - BODY
     @State var count = 1
-
+    
+    // MARK: - BODY
     var body: some View {
         VStack {
             VStack {
                 HStack {
-                  Spacer()
+                    Spacer()
                 }
                 AsyncImage(url: URL(string: item.imageName)!,
                            placeholder: { Text("Loading ...") },
@@ -33,9 +35,7 @@ struct FoodDescriptionView: View {
                     }) {
                         Text("-").fontWeight(.bold).font(.title3)
                     }.padding(7)
-//                    Divider()
                     Text("\(count)").fontWeight(.bold).padding(7)
-//                    Divider()
                     Button(action: {
                         count += 1
                     }) {
@@ -47,51 +47,61 @@ struct FoodDescriptionView: View {
                 .cornerRadius(26)
                 .frame(width: 180, height: 50)
                 .shadow(color: Color("shadowGray"), radius: 5)
-                
-                                
-//                Spacer()
             }
             .frame(height: 300)
             .background(Color("descriptionBackground").edgesIgnoringSafeArea([.trailing, .leading, .top]))
-            DescriptionView(name: item.name).padding()
+            DescriptionView(item: item, count: $count).padding()
         }
     }
     
 }
 
 struct DescriptionView: View {
-    let name: String
+    let item: FoodCard
+    @State private var buttonText: String = "Add To Cart"
+    @State private var buttonImage: String = "cart.fill.badge.plus"
+    @State private var buttonColor: Color = .black
+    //    @StateObject var addedItem = AddedCartItems()
+    @Binding var count: Int
     var body: some View {
         VStack {
             HStack {
-                Text(name).font(.title).bold()
+                Text(item.name).font(.title).bold()
                 Spacer()
                 Image(systemName: "stopwatch").foregroundColor(.green)
                 Text("10-15 mins").foregroundColor(.gray)
             }.padding()
-            Text("multi lined food description. multi lined food description. multi lined food description").font(.footnote).foregroundColor(.gray).lineSpacing(10)
+            Text("multi lined food description. multi lined food description. multi lined food description").font(.footnote).foregroundColor(.gray).lineSpacing(8).padding([.bottom], 5)
             TopingView()
+            Spacer()
             HStack {
                 VStack {
                     Text("Total Price").foregroundColor(.gray).font(.caption).bold()
                     HStack{
                         Text("$").foregroundColor(.yellow).bold().font(.title2)
-                        Text("36.00").bold().font(.title2)
+                        Text(String(format: "%.2f", item.price * Double(count))).bold().font(.title2)
                     }
                 }
                 Spacer()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Image(systemName: "cart.fill.badge.plus")
-                    Text("Add To Cart")
+                Button(action: {
+                    items.append(item)
+                    buttonText = "Added!"
+                    buttonImage = "checkmark.seal.fill"
+                    buttonColor = .green
+                }, label: {
+                    Image(systemName: buttonImage)
+                    Text(buttonText)
                         .padding()
+                        .frame(width: 130)
                 })
-//                .padding([.leading, .trailing], 10)
-                .background(Color.black)
+                .padding([.leading], 20)
+                .padding([.trailing], 10)
+                .background(buttonColor)
                 .foregroundColor(.white)
-//                .cornerRadius(26)
-//                .frame(width: 180, height: 70)
-//                .shadow(color: Color("shadowGray"), radius: 5)
+                .cornerRadius(26)
+                .shadow(color: Color("shadowGray"), radius: 8)
             }
+            .padding([.bottom], 15)
         }
         
     }

@@ -10,9 +10,7 @@ import SwiftUI
 struct HomeView: View {
     // MARK: - PROPERTIES
     @State private var searchText: String = ""
-    //@State private var text: String = ""
-    
-    //@ObservedObject var searchBar: SearchBar = SearchBar()
+    @EnvironmentObject var sourceRectBindings: CategorySelection
     
     // MARK: - BODY
     var body: some View {
@@ -29,30 +27,9 @@ struct HomeView: View {
                     .background(Color(.systemGray5))
                     .cornerRadius(10)
                     .padding(.horizontal)
-                    //                    Image("slider.horizontal.3")
-                    //
-                    //                                        ForEach(animals.filter({_ in
-                    //                                                                self.searchText.isEmpty ? true :
-                    //                                                                    "$0".lowercased().contains(searchText.lowercased())})
-                    //                                        )  {
-                    //                                            animal in
-                    //                                            HStack {
-                    //                                                Image(animal.image)
-                    //                                                    .resizable()
-                    //                                                    .scaledToFit()
-                    //                                                    .frame(width: 80, height: 80)
-                    //
-                    //                                                Text(animal.name)
-                    //                                                    .font(.headline)
-                    //                                                    .fontWeight(.bold)
-                    //                                                Spacer()
-                    //                                            }//: HSTACK
-                    //                                            .padding()
-                    //                                            Divider()
-                    //                                        }//: LOOP
-                    FoodCategoriesView()
+                    FoodCategoriesView().environmentObject(sourceRectBindings)
                     Spacer()
-                    FoodCardView()
+                    FoodCardView().environmentObject(sourceRectBindings)
                     HStack{
                         Text("Popular Items").fontWeight(.bold).font(.system(size: 20))
                         Spacer()
@@ -67,6 +44,7 @@ struct HomeView: View {
 }
 
 struct FoodItem: View {
+    let item: FoodCard
     var body: some View {
         HStack {
             AsyncImage(url: URL(string: "https://www.hackingwithswift.com/img/paul.png")!,
@@ -79,11 +57,11 @@ struct FoodItem: View {
                 .background(Color.green)
                 .cornerRadius(25.0)
             VStack(alignment:.leading) {
-                Text("Burger")
+                Text("\(item.name)")
                     .font(.title2)
-                Text("$10")
+                Text("\(item.price)")
                     .foregroundColor(.secondary)
-                Text("The burger introduction on multiple linesssssss")
+                Text("\(item.description)")
                     .foregroundColor(.secondary)
             }
             .padding()
@@ -93,4 +71,3 @@ struct FoodItem: View {
         .padding(.all, 15)
     }
 }
-

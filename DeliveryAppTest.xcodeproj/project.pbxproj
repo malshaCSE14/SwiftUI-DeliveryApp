@@ -23,6 +23,9 @@
 		F1A35F7426637B75000D6243 /* DetailedFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A35F7326637B75000D6243 /* DetailedFoodView.swift */; };
 		F1A35F7726637C94000D6243 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A35F7626637C94000D6243 /* HomeView.swift */; };
 		F1A35F7B2663C45B000D6243 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A35F7A2663C45B000D6243 /* ProfileView.swift */; };
+		F1A487CB26E9BD8500D38CDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1A487CA26E9BD8500D38CDB /* LaunchScreen.storyboard */; };
+		F1A487CE26EA029100D38CDB /* AppEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A487CD26EA029100D38CDB /* AppEnums.swift */; };
+		F1A487D826EA610200D38CDB /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A487D726EA610200D38CDB /* Food.swift */; };
 		F1FC5AAF2662180E00E841AD /* DeliveryAppTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC5AAE2662180E00E841AD /* DeliveryAppTestApp.swift */; };
 		F1FC5AB12662180E00E841AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC5AB02662180E00E841AD /* ContentView.swift */; };
 		F1FC5AB32662180F00E841AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FC5AB22662180F00E841AD /* Assets.xcassets */; };
@@ -46,6 +49,9 @@
 		F1A35F7326637B75000D6243 /* DetailedFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedFoodView.swift; sourceTree = "<group>"; };
 		F1A35F7626637C94000D6243 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1A35F7A2663C45B000D6243 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F1A487CA26E9BD8500D38CDB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1A487CD26EA029100D38CDB /* AppEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnums.swift; sourceTree = "<group>"; };
+		F1A487D726EA610200D38CDB /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		F1FC5AAB2662180E00E841AD /* DeliveryAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FC5AAE2662180E00E841AD /* DeliveryAppTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAppTestApp.swift; sourceTree = "<group>"; };
 		F1FC5AB02662180E00E841AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,8 +126,9 @@
 		F12AF74126C6865900BE4B8D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F1A487C826E9AEA000D38CDB /* AppConstants */,
 				F12AF74226C6867400BE4B8D /* AsyncImage.swift */,
-				F19E827726C78EBE0077F80C /* ImageURLs.swift */,
+				F1A487CD26EA029100D38CDB /* AppEnums.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -161,9 +168,19 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		F1A487C826E9AEA000D38CDB /* AppConstants */ = {
+			isa = PBXGroup;
+			children = (
+				F19E827726C78EBE0077F80C /* ImageURLs.swift */,
+				F1A487D726EA610200D38CDB /* Food.swift */,
+			);
+			path = AppConstants;
+			sourceTree = "<group>";
+		};
 		F1FC5AA22662180E00E841AD = {
 			isa = PBXGroup;
 			children = (
+				F1A487CA26E9BD8500D38CDB /* LaunchScreen.storyboard */,
 				F1FC5AAD2662180E00E841AD /* DeliveryAppTest */,
 				F1FC5AAC2662180E00E841AD /* Products */,
 			);
@@ -263,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1526DBD26870B6C00E9194B /* Colors.xcassets in Resources */,
+				F1A487CB26E9BD8500D38CDB /* LaunchScreen.storyboard in Resources */,
 				F1FC5AB62662180F00E841AD /* Preview Assets.xcassets in Resources */,
 				F1FC5AB32662180F00E841AD /* Assets.xcassets in Resources */,
 			);
@@ -278,7 +296,9 @@
 				F1526DC32688660700E9194B /* FoodCategoriesView.swift in Sources */,
 				F1526DC62688664400E9194B /* FoodCardView.swift in Sources */,
 				F1A35F7426637B75000D6243 /* DetailedFoodView.swift in Sources */,
+				F1A487D826EA610200D38CDB /* Food.swift in Sources */,
 				F1526DCA2688669000E9194B /* PopularItemsView.swift in Sources */,
+				F1A487CE26EA029100D38CDB /* AppEnums.swift in Sources */,
 				F111AA34268621EE008A7C50 /* CartView.swift in Sources */,
 				F111AA3A268635EE008A7C50 /* FavouritesView.swift in Sources */,
 				F1FC5AB12662180E00E841AD /* ContentView.swift in Sources */,

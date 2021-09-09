@@ -15,6 +15,7 @@ struct ContentView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
+                .environmentObject(CategorySelection())
             FavouritesView()
                 .tabItem {
                     Label("Favourites", systemImage: "suit.heart.fill")

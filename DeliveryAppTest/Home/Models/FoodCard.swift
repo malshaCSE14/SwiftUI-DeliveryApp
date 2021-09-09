@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct FoodCard: Identifiable {
-    var id = UUID()
-    let name: String
-    let imageName: String
-    let introduction: String
-    let description: String
-    let price: Double
+public struct FoodCard: Identifiable {
+    public var id = UUID()
+    public let name: String
+    public let imageName: String
+    public let introduction: String
+    public let description: String
+    public let price: Double
 }

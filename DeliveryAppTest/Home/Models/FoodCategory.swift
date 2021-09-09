@@ -9,17 +9,8 @@ import SwiftUI
 
 struct FoodCategory: Identifiable {
     var id = UUID()
-    let name: String
+    let type: FoodType
     let imageName: String
     let color: Color
     let imageWidth: CGFloat
-}
-
-enum Category {
-    case pizza
-    case burger
-    case pasta
-    case rice
-    case baverages
-    case iceCream
 }
