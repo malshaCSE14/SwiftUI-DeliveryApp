@@ -11,8 +11,7 @@ struct FoodCardView: View  {
     @EnvironmentObject var sourceRectBindings: CategorySelection
     
     var body: some View {
-        let food = Food()
-        let foodCards: [FoodCard] = food.getArray(type: sourceRectBindings.category)
+        let foodCards: [FoodCard] = Food.getArray(type: sourceRectBindings.category)
         
         ScrollView(.horizontal) {
             HStack{

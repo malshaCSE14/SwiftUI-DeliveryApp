@@ -13,5 +13,6 @@ public struct FoodCard: Identifiable {
     public let imageName: String
     public let introduction: String
     public let description: String
-    public let price: Double
+    public var price: Double
+    public var count: Int?
 }

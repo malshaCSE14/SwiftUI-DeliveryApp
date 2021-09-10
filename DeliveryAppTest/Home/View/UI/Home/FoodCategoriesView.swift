@@ -46,3 +46,7 @@ struct FoodCategoriesView: View {
 class CategorySelection: ObservableObject {
     @Published var category = FoodType.pizza
 }
+
+class CartItems: ObservableObject {
+    @Published var items = [FoodCard]()
+}

@@ -42,32 +42,3 @@ struct HomeView: View {
         }
     }
 }
-
-struct FoodItem: View {
-    let item: FoodCard
-    var body: some View {
-        HStack {
-            AsyncImage(url: URL(string: "https://www.hackingwithswift.com/img/paul.png")!,
-                       placeholder: { Text("Loading ...") },
-                       image: { Image(uiImage: $0).resizable() })
-                .scaledToFit()
-                .frame(width: 100.0, height: 100.0)
-                .padding([.top, .bottom])
-                .padding([.leading, .trailing], 10)
-                .background(Color.green)
-                .cornerRadius(25.0)
-            VStack(alignment:.leading) {
-                Text("\(item.name)")
-                    .font(.title2)
-                Text("\(item.price)")
-                    .foregroundColor(.secondary)
-                Text("\(item.description)")
-                    .foregroundColor(.secondary)
-            }
-            .padding()
-        }
-        .background(Color.white)
-        .cornerRadius(25.0)
-        .padding(.all, 15)
-    }
-}

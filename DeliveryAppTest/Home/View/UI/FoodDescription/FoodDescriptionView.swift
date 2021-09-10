@@ -79,12 +79,14 @@ struct DescriptionView: View {
                     Text("Total Price").foregroundColor(.gray).font(.caption).bold()
                     HStack{
                         Text("$").foregroundColor(.yellow).bold().font(.title2)
-                        Text(String(format: "%.2f", item.price * Double(count))).bold().font(.title2)
+                        Text("\(item.price * Double(count), specifier: "%.2f")").bold().font(.title2)
                     }
                 }
                 Spacer()
                 Button(action: {
-                    items.append(item)
+                    var addToCartItems = item
+                    addToCartItems.count = count
+                    items.append(addToCartItems)
                     buttonText = "Added!"
                     buttonImage = "checkmark.seal.fill"
                     buttonColor = .green

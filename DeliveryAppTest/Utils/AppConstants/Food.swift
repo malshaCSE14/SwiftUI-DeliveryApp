@@ -8,7 +8,8 @@
 import Foundation
 
 struct Food {
-    func getArray(type: FoodType) -> [FoodCard] {
+    static func getArray(type: FoodType, index: Int? = nil) -> [FoodCard] {
+        var foodArray = [FoodCard]()
         switch type {
         case .pizza:
             return getPizzaArray()
@@ -19,11 +20,16 @@ struct Food {
         case .cake:
             return getCakeArray()
         case .iceCream:
-            return getIceCreamArray()
+            foodArray = getIceCreamArray()
+        }
+        if let index = index, index < foodArray.count {
+            return [foodArray[index]]
+        } else {
+            return foodArray
         }
     }
     
-    func getBurgerArray() -> [FoodCard] {
+    private static func getBurgerArray() -> [FoodCard] {
         return [
             FoodCard(name: "Chicken Burger", imageName: ImageURLs.burger.rawValue, introduction: "Burger Meal", description: "desc", price: 10.0),
             FoodCard(name: "Burger Meal", imageName: ImageURLs.burgerMeal.rawValue, introduction: "San Marzano tomatoes & mozzarella cheese", description: "desc", price: 8.0),
@@ -35,26 +41,26 @@ struct Food {
         ]
     }
     
-    func getBaveragesArray() -> [FoodCard] {
+    private static func getBaveragesArray() -> [FoodCard] {
         return [
             FoodCard(name: "Coke", imageName: ImageURLs.coke.rawValue, introduction: "Carbonated soft drink ", description: "desc", price: 11.0),
         ]
     }
     
-    func getPizzaArray() -> [FoodCard] {
+    private static func getPizzaArray() -> [FoodCard] {
         return [
             FoodCard(name: "Mushroom Pizza", imageName: ImageURLs.pizza.rawValue, introduction: "Fresh buttery shiitake mushroom topping", description: "desc", price: 10.0),
             FoodCard(name: "Pizza Margherita", imageName: ImageURLs.pizzaMargherita.rawValue, introduction: "San Marzano tomatoes & mozzarella cheese", description: "desc", price: 12.0),
         ]
     }
     
-    func getCakeArray() -> [FoodCard] {
+    private static func getCakeArray() -> [FoodCard] {
         return [
             FoodCard(name: "Cake", imageName: ImageURLs.cake.rawValue, introduction: "Great taste in every bite", description: "desc", price: 32.0),
         ]
     }
     
-    func getIceCreamArray() -> [FoodCard] {
+    private static func getIceCreamArray() -> [FoodCard] {
         return [
             FoodCard(name: "Ice Cream", imageName: ImageURLs.iceCream.rawValue, introduction: "Brain freeze!", description: "desc", price: 5.0),
         ]

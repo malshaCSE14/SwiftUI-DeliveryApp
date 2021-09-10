@@ -12,8 +12,10 @@ struct PopularItemsView: View {
     var body: some View {
         let foodCards: [FoodCard] = [
             FoodCard(name: "Beef Steak", imageName: ImageURLs.beefSteak.rawValue, introduction: "BB’s double beef patty (340g)", description: "desc", price: 10.0),
-            FoodCard(name: "Mushroom Pizza", imageName: ImageURLs.pizza.rawValue, introduction: "qwagrzfverty", description: "desc", price: 12.0),
-            FoodCard(name: "Burger", imageName: ImageURLs.burger.rawValue, introduction: "qwezfdcrty", description: "desc", price: 14.0)
+//            FoodCard(name: "Mushroom Pizza", imageName: ImageURLs.pizza.rawValue, introduction: "qwagrzfverty", description: "desc", price: 12.0),
+//            FoodCard(name: "Burger", imageName: ImageURLs.burger.rawValue, introduction: "qwezfdcrty", description: "desc", price: 14.0)
+            Food.getArray(type: FoodType.pizza, index: 0).first!,
+            Food.getArray(type: FoodType.burger, index: 2).first!
         ]
         ScrollView(.horizontal) {
             HStack{
