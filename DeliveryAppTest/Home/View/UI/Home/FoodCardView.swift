@@ -9,14 +9,15 @@ import SwiftUI
 
 struct FoodCardView: View  {
     @EnvironmentObject var sourceRectBindings: CategorySelection
-    
+    @StateObject var cartItemsBinding: CartItems
+
     var body: some View {
         let foodCards: [FoodCard] = Food.getArray(type: sourceRectBindings.category)
         
         ScrollView(.horizontal) {
             HStack{
                 ForEach(foodCards) { foodCard in
-                    NavigationLink(destination: FoodDescriptionView(item: foodCard)) {
+                    NavigationLink(destination: FoodDescriptionView(item: foodCard, cartItemsBinding: cartItemsBinding)) {
                         VStack {
                             AsyncImage(url: URL(string: foodCard.imageName)!,
                                        placeholder: { Text("Loading ...") },

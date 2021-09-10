@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-public var items = [FoodCard]()
+//public var items = [FoodCard]()
 
 struct FoodDescriptionView: View {
     let item: FoodCard
     @State var count = 1
-    
+    @StateObject var cartItemsBinding: CartItems
+
     // MARK: - BODY
     var body: some View {
         VStack {
@@ -50,7 +51,7 @@ struct FoodDescriptionView: View {
             }
             .frame(height: 300)
             .background(Color("descriptionBackground").edgesIgnoringSafeArea([.trailing, .leading, .top]))
-            DescriptionView(item: item, count: $count).padding()
+            DescriptionView(item: item, cartItemsBinding: cartItemsBinding, count: $count).padding()
         }
     }
     
@@ -61,7 +62,8 @@ struct DescriptionView: View {
     @State private var buttonText: String = "Add To Cart"
     @State private var buttonImage: String = "cart.fill.badge.plus"
     @State private var buttonColor: Color = .black
-    //    @StateObject var addedItem = AddedCartItems()
+    @StateObject var cartItemsBinding: CartItems
+
     @Binding var count: Int
     var body: some View {
         VStack {
@@ -86,7 +88,7 @@ struct DescriptionView: View {
                 Button(action: {
                     var addToCartItems = item
                     addToCartItems.count = count
-                    items.append(addToCartItems)
+                    cartItemsBinding.items.append(addToCartItems)
                     buttonText = "Added!"
                     buttonImage = "checkmark.seal.fill"
                     buttonColor = .green

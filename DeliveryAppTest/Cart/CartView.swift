@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CartView: View {
-    @EnvironmentObject var cartItemsBinding: CartItems
+    @StateObject var cartItemsBinding: CartItems
 
     var body: some View {
         VStack {
@@ -16,13 +16,13 @@ struct CartView: View {
                 VStack {
                     ScrollView {
                         VStack(alignment: .leading) {
-                            ForEach(items) { item in
-                                FoodItem(item: item)
+                            ForEach(cartItemsBinding.items) { item in
+                                FoodItem(cartItemsBinding: cartItemsBinding, item: item, count: item.count ?? 1)
                             }
                         }
                     }
                     Spacer()
-                    ProceedButton()
+                    ProceedButton(cartItemsBinding: cartItemsBinding).environmentObject(cartItemsBinding)
                         .padding(.bottom)
                 }.navigationBarTitle("Shopping Cart")
             }
@@ -31,13 +31,15 @@ struct CartView: View {
 }
 
 struct ProceedButton: View {
+    @StateObject var cartItemsBinding: CartItems
+
     var body: some View {
         Button(action: {
             print("Proceed tapped!")
         }) {
             HStack {
                 Text("Total $")
-                Text("\(items.map{ $0.price * Double($0.count ?? 1) }.reduce(0, +), specifier: "%.2f")")
+                Text("\(cartItemsBinding.items.map{ $0.price * Double($0.count ?? 1) }.reduce(0, +), specifier: "%.2f")")
                     .fontWeight(.semibold)
                     .font(.title)
                 Spacer()
@@ -56,8 +58,10 @@ struct ProceedButton: View {
 }
 
 struct FoodItem: View {
+    @StateObject var cartItemsBinding: CartItems
     let item: FoodCard
-    @State var count = 1
+    @State var count: Int
+
     var body: some View {
         HStack {
             AsyncImage(url: URL(string: item.imageName)!,
@@ -78,10 +82,10 @@ struct FoodItem: View {
                     .foregroundColor(.secondary)
             }
             Spacer()
-            
             VStack {
                 Button(action: {
                     count += 1
+                    updateFoodItemPrice()
                 }) {
                     Text("+").fontWeight(.bold).font(.title3)
                 }.padding()
@@ -89,6 +93,7 @@ struct FoodItem: View {
                 Button(action: {
                     if (count > 0) {
                         count -= 1
+                        updateFoodItemPrice()
                     }
                 }) {
                     Text("-").fontWeight(.bold).font(.title3)
@@ -101,5 +106,11 @@ struct FoodItem: View {
         .background(Color.white)
         .cornerRadius(25.0)
         .padding([.leading, .top, .bottom], 15)
+    }
+    
+    func updateFoodItemPrice() {
+        if let index = cartItemsBinding.items.enumerated().filter({ $0.element.name == item.name }).map({ $0.offset }).first {
+            cartItemsBinding.items[index].count = count
+        }
     }
 }

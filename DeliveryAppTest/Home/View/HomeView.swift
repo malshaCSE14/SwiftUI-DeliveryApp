@@ -11,6 +11,7 @@ struct HomeView: View {
     // MARK: - PROPERTIES
     @State private var searchText: String = ""
     @EnvironmentObject var sourceRectBindings: CategorySelection
+    @StateObject var cartItemsBinding: CartItems
     
     // MARK: - BODY
     var body: some View {
@@ -29,7 +30,7 @@ struct HomeView: View {
                     .padding(.horizontal)
                     FoodCategoriesView().environmentObject(sourceRectBindings)
                     Spacer()
-                    FoodCardView().environmentObject(sourceRectBindings)
+                    FoodCardView(cartItemsBinding: cartItemsBinding).environmentObject(sourceRectBindings)
                     HStack{
                         Text("Popular Items").fontWeight(.bold).font(.system(size: 20))
                         Spacer()

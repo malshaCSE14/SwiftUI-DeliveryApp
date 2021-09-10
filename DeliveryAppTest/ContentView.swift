@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var cartItemsBinding = CartItems()
+
     var body: some View {
         TabView {
-            HomeView()
+            HomeView(cartItemsBinding: cartItemsBinding)
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Home")
@@ -20,7 +22,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Favourites", systemImage: "suit.heart.fill")
                 }
-            CartView()
+            CartView(cartItemsBinding: cartItemsBinding)
                 .tabItem {
                     Label("Cart", systemImage: "cart.fill")
                 }
@@ -41,7 +43,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
 //            ContentView()
-            HomeView()
+//            HomeView( cartItemsBinding: cartItemsBinding)
 //            FavouritesView()
 //            CartView()
 //            ProfileView()
