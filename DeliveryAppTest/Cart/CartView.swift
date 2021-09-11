@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Stripe
 
 struct CartView: View {
     @StateObject var cartItemsBinding: CartItems
@@ -13,7 +14,12 @@ struct CartView: View {
     var body: some View {
         VStack {
             NavigationView {
-                VStack {
+                VStack(alignment: .trailing) {
+                    Button(action: {
+                        cartItemsBinding.items = [FoodCard]()
+                    }) {
+                        Text("Clear cart").foregroundColor(.orange).padding(.trailing)
+                    }
                     ScrollView {
                         VStack(alignment: .leading) {
                             ForEach(cartItemsBinding.items) { item in
@@ -33,10 +39,9 @@ struct CartView: View {
 struct ProceedButton: View {
     @StateObject var cartItemsBinding: CartItems
 
+    @State var showAddCardView = true
     var body: some View {
-        Button(action: {
-            print("Proceed tapped!")
-        }) {
+        NavigationLink(destination: AddressView()) {
             HStack {
                 Text("Total $")
                 Text("\(cartItemsBinding.items.map{ $0.price * Double($0.count ?? 1) }.reduce(0, +), specifier: "%.2f")")
@@ -61,7 +66,8 @@ struct FoodItem: View {
     @StateObject var cartItemsBinding: CartItems
     let item: FoodCard
     @State var count: Int
-
+    let colors = [Color.green, Color("Green2"), Color("Green1")]
+    
     var body: some View {
         HStack {
             AsyncImage(url: URL(string: item.imageName)!,
@@ -71,7 +77,7 @@ struct FoodItem: View {
                 .frame(width: 100.0, height: 100.0)
                 .padding([.top, .bottom])
                 .padding([.leading, .trailing], 10)
-                .background(Color.green)
+                .background(colors[getIndex() ?? 0])
                 .cornerRadius(25.0)
             VStack(alignment:.leading) {
                 Text("\(item.name)")
@@ -88,8 +94,8 @@ struct FoodItem: View {
                     updateFoodItemPrice()
                 }) {
                     Text("+").fontWeight(.bold).font(.title3)
-                }.padding()
-                Text("\(count)").fontWeight(.bold).padding()
+                }
+                Text("\(count)").fontWeight(.bold).padding([.top, .bottom])
                 Button(action: {
                     if (count > 0) {
                         count -= 1
@@ -97,19 +103,23 @@ struct FoodItem: View {
                     }
                 }) {
                     Text("-").fontWeight(.bold).font(.title3)
-                }.padding()
+                }
             }
-            .background(Color("shadowGray"))
-            .cornerRadius(8)
+            .frame(height: 100.0)
             .padding()
+            .background(Color("shadowGray"))
+            .cornerRadius(25)
         }
         .background(Color.white)
         .cornerRadius(25.0)
-        .padding([.leading, .top, .bottom], 15)
+        .padding(15)
     }
     
+    func getIndex() -> Int? {
+        return cartItemsBinding.items.enumerated().filter({ $0.element.name == item.name }).map({ $0.offset }).first
+    }
     func updateFoodItemPrice() {
-        if let index = cartItemsBinding.items.enumerated().filter({ $0.element.name == item.name }).map({ $0.offset }).first {
+        if let index = getIndex() {
             cartItemsBinding.items[index].count = count
         }
     }

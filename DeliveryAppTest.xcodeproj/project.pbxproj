@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5991F41FB11A3A67BC149A1 /* Pods_DeliveryAppTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91FE13C7F363A69AC4D5B63 /* Pods_DeliveryAppTest.framework */; };
+		F1108FC726EC6D8100C48773 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1108FC626EC6D8100C48773 /* AddressView.swift */; };
 		F111AA34268621EE008A7C50 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111AA33268621EE008A7C50 /* CartView.swift */; };
-		F111AA3A268635EE008A7C50 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F111AA39268635EE008A7C50 /* FavouritesView.swift */; };
+		F119E7C426EB9856004D08A3 /* PaymentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119E7C326EB9856004D08A3 /* PaymentHandler.swift */; };
+		F119E7CE26EBA0C2004D08A3 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119E7CD26EBA0C2004D08A3 /* PaymentView.swift */; };
 		F11F4E42268C524500EC90A5 /* FoodDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11F4E41268C524500EC90A5 /* FoodDescriptionView.swift */; };
 		F12AF74326C6867400BE4B8D /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AF74226C6867400BE4B8D /* AsyncImage.swift */; };
 		F1526DB12686D82800E9194B /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1526DB02686D82800E9194B /* FoodCategory.swift */; };
@@ -18,8 +21,9 @@
 		F1526DC32688660700E9194B /* FoodCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1526DC22688660700E9194B /* FoodCategoriesView.swift */; };
 		F1526DC62688664400E9194B /* FoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1526DC52688664400E9194B /* FoodCardView.swift */; };
 		F1526DCA2688669000E9194B /* PopularItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1526DC92688669000E9194B /* PopularItemsView.swift */; };
+		F173647226EC6F6E00281B0C /* OrderSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F173647126EC6F6E00281B0C /* OrderSuccessView.swift */; };
+		F173647626EC720E00281B0C /* delivery.json in Resources */ = {isa = PBXBuildFile; fileRef = F173647526EC720E00281B0C /* delivery.json */; };
 		F19E827826C78EBE0077F80C /* ImageURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E827726C78EBE0077F80C /* ImageURLs.swift */; };
-		F1A35F7026637A72000D6243 /* MyOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A35F6F26637A72000D6243 /* MyOrderView.swift */; };
 		F1A35F7426637B75000D6243 /* DetailedFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A35F7326637B75000D6243 /* DetailedFoodView.swift */; };
 		F1A35F7726637C94000D6243 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A35F7626637C94000D6243 /* HomeView.swift */; };
 		F1A35F7B2663C45B000D6243 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A35F7A2663C45B000D6243 /* ProfileView.swift */; };
@@ -33,8 +37,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E70AA34C2AF278272E3F570 /* Pods-DeliveryAppTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAppTest.release.xcconfig"; path = "Target Support Files/Pods-DeliveryAppTest/Pods-DeliveryAppTest.release.xcconfig"; sourceTree = "<group>"; };
+		97D6ACC29B4D3CD2A9FAED06 /* Pods-DeliveryAppTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAppTest.debug.xcconfig"; path = "Target Support Files/Pods-DeliveryAppTest/Pods-DeliveryAppTest.debug.xcconfig"; sourceTree = "<group>"; };
+		F1108FC626EC6D8100C48773 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		F111AA33268621EE008A7C50 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
-		F111AA39268635EE008A7C50 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		F119E7C326EB9856004D08A3 /* PaymentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHandler.swift; sourceTree = "<group>"; };
+		F119E7CD26EBA0C2004D08A3 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		F11F4E41268C524500EC90A5 /* FoodDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDescriptionView.swift; sourceTree = "<group>"; };
 		F12AF74226C6867400BE4B8D /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		F1526DB02686D82800E9194B /* FoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
@@ -44,8 +52,9 @@
 		F1526DC22688660700E9194B /* FoodCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoriesView.swift; sourceTree = "<group>"; };
 		F1526DC52688664400E9194B /* FoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardView.swift; sourceTree = "<group>"; };
 		F1526DC92688669000E9194B /* PopularItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularItemsView.swift; sourceTree = "<group>"; };
+		F173647126EC6F6E00281B0C /* OrderSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSuccessView.swift; sourceTree = "<group>"; };
+		F173647526EC720E00281B0C /* delivery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = delivery.json; sourceTree = "<group>"; };
 		F19E827726C78EBE0077F80C /* ImageURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLs.swift; sourceTree = "<group>"; };
-		F1A35F6F26637A72000D6243 /* MyOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderView.swift; sourceTree = "<group>"; };
 		F1A35F7326637B75000D6243 /* DetailedFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedFoodView.swift; sourceTree = "<group>"; };
 		F1A35F7626637C94000D6243 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1A35F7A2663C45B000D6243 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -58,6 +67,7 @@
 		F1FC5AB22662180F00E841AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1FC5AB52662180F00E841AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F1FC5AB72662180F00E841AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F91FE13C7F363A69AC4D5B63 /* Pods_DeliveryAppTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryAppTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,18 +75,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5991F41FB11A3A67BC149A1 /* Pods_DeliveryAppTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F111AA3D2686365D008A7C50 /* Favourites */ = {
+		3D74ACD26754F71044AFACBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F111AA39268635EE008A7C50 /* FavouritesView.swift */,
+				F91FE13C7F363A69AC4D5B63 /* Pods_DeliveryAppTest.framework */,
 			);
-			path = Favourites;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74FC1CC0FAC9FA137BD36166 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97D6ACC29B4D3CD2A9FAED06 /* Pods-DeliveryAppTest.debug.xcconfig */,
+				6E70AA34C2AF278272E3F570 /* Pods-DeliveryAppTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F1108FC526EC6D7300C48773 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				F1108FC626EC6D8100C48773 /* AddressView.swift */,
+			);
+			path = Address;
 			sourceTree = "<group>";
 		};
 		F111AA3E26863668008A7C50 /* Cart */ = {
@@ -105,6 +133,23 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		F119E7C226EB983F004D08A3 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				F119E7D026EBA0CD004D08A3 /* View */,
+				F119E7C326EB9856004D08A3 /* PaymentHandler.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		F119E7D026EBA0CD004D08A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F119E7CD26EBA0C2004D08A3 /* PaymentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F11F4E3E268C51FE00EC90A5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +171,7 @@
 		F12AF74126C6865900BE4B8D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F173647526EC720E00281B0C /* delivery.json */,
 				F1A487C826E9AEA000D38CDB /* AppConstants */,
 				F12AF74226C6867400BE4B8D /* AsyncImage.swift */,
 				F1A487CD26EA029100D38CDB /* AppEnums.swift */,
@@ -168,6 +214,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		F173647026EC6F5C00281B0C /* OrderSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				F173647126EC6F6E00281B0C /* OrderSuccessView.swift */,
+			);
+			path = OrderSuccess;
+			sourceTree = "<group>";
+		};
 		F1A487C826E9AEA000D38CDB /* AppConstants */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +237,8 @@
 				F1A487CA26E9BD8500D38CDB /* LaunchScreen.storyboard */,
 				F1FC5AAD2662180E00E841AD /* DeliveryAppTest */,
 				F1FC5AAC2662180E00E841AD /* Products */,
+				74FC1CC0FAC9FA137BD36166 /* Pods */,
+				3D74ACD26754F71044AFACBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,15 +253,16 @@
 		F1FC5AAD2662180E00E841AD /* DeliveryAppTest */ = {
 			isa = PBXGroup;
 			children = (
+				F173647026EC6F5C00281B0C /* OrderSuccess */,
+				F1108FC526EC6D7300C48773 /* Address */,
+				F119E7C226EB983F004D08A3 /* Payment */,
 				F12AF74126C6865900BE4B8D /* Utils */,
 				F111AA4226863852008A7C50 /* Home */,
-				F111AA3D2686365D008A7C50 /* Favourites */,
 				F111AA3E26863668008A7C50 /* Cart */,
 				F111AA3F26863671008A7C50 /* Profile */,
 				F1FC5AAE2662180E00E841AD /* DeliveryAppTestApp.swift */,
 				F1FC5AB02662180E00E841AD /* ContentView.swift */,
 				F1A35F7326637B75000D6243 /* DetailedFoodView.swift */,
-				F1A35F6F26637A72000D6243 /* MyOrderView.swift */,
 				F1FC5AB22662180F00E841AD /* Assets.xcassets */,
 				F1526DBC26870B6C00E9194B /* Colors.xcassets */,
 				F1FC5AB72662180F00E841AD /* Info.plist */,
@@ -229,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1FC5ABA2662180F00E841AD /* Build configuration list for PBXNativeTarget "DeliveryAppTest" */;
 			buildPhases = (
+				C3F94F3BA87E55F326947B34 /* [CP] Check Pods Manifest.lock */,
 				F1FC5AA72662180E00E841AD /* Sources */,
 				F1FC5AA82662180E00E841AD /* Frameworks */,
 				F1FC5AA92662180E00E841AD /* Resources */,
+				D7E1A33B29F5D6C36C6797E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F173647626EC720E00281B0C /* delivery.json in Resources */,
 				F1526DBD26870B6C00E9194B /* Colors.xcassets in Resources */,
 				F1A487CB26E9BD8500D38CDB /* LaunchScreen.storyboard in Resources */,
 				F1FC5AB62662180F00E841AD /* Preview Assets.xcassets in Resources */,
@@ -287,6 +347,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C3F94F3BA87E55F326947B34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeliveryAppTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7E1A33B29F5D6C36C6797E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeliveryAppTest/Pods-DeliveryAppTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeliveryAppTest/Pods-DeliveryAppTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeliveryAppTest/Pods-DeliveryAppTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1FC5AA72662180E00E841AD /* Sources */ = {
@@ -298,16 +400,18 @@
 				F1A35F7426637B75000D6243 /* DetailedFoodView.swift in Sources */,
 				F1A487D826EA610200D38CDB /* Food.swift in Sources */,
 				F1526DCA2688669000E9194B /* PopularItemsView.swift in Sources */,
+				F173647226EC6F6E00281B0C /* OrderSuccessView.swift in Sources */,
 				F1A487CE26EA029100D38CDB /* AppEnums.swift in Sources */,
 				F111AA34268621EE008A7C50 /* CartView.swift in Sources */,
-				F111AA3A268635EE008A7C50 /* FavouritesView.swift in Sources */,
 				F1FC5AB12662180E00E841AD /* ContentView.swift in Sources */,
 				F1526DB12686D82800E9194B /* FoodCategory.swift in Sources */,
+				F119E7CE26EBA0C2004D08A3 /* PaymentView.swift in Sources */,
 				F1526DB92686E26C00E9194B /* HomeVieModel.swift in Sources */,
+				F119E7C426EB9856004D08A3 /* PaymentHandler.swift in Sources */,
 				F11F4E42268C524500EC90A5 /* FoodDescriptionView.swift in Sources */,
 				F1FC5AAF2662180E00E841AD /* DeliveryAppTestApp.swift in Sources */,
+				F1108FC726EC6D8100C48773 /* AddressView.swift in Sources */,
 				F19E827826C78EBE0077F80C /* ImageURLs.swift in Sources */,
-				F1A35F7026637A72000D6243 /* MyOrderView.swift in Sources */,
 				F12AF74326C6867400BE4B8D /* AsyncImage.swift in Sources */,
 				F1526DB42686D8DC00E9194B /* FoodCard.swift in Sources */,
 				F1A35F7B2663C45B000D6243 /* ProfileView.swift in Sources */,
@@ -436,6 +540,7 @@
 		};
 		F1FC5ABB2662180F00E841AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97D6ACC29B4D3CD2A9FAED06 /* Pods-DeliveryAppTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -458,6 +563,7 @@
 		};
 		F1FC5ABC2662180F00E841AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E70AA34C2AF278272E3F570 /* Pods-DeliveryAppTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

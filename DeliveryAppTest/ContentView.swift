@@ -18,10 +18,6 @@ struct ContentView: View {
                     Text("Home")
                 }
                 .environmentObject(CategorySelection())
-            FavouritesView()
-                .tabItem {
-                    Label("Favourites", systemImage: "suit.heart.fill")
-                }
             CartView(cartItemsBinding: cartItemsBinding)
                 .tabItem {
                     Label("Cart", systemImage: "cart.fill")
@@ -43,8 +39,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
 //            ContentView()
-//            HomeView( cartItemsBinding: cartItemsBinding)
-//            FavouritesView()
+//            HomeView(cartItemsBinding: cartItemsBinding)
 //            CartView()
 //            ProfileView()
         }

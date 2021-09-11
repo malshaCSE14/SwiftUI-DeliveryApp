@@ -50,3 +50,7 @@ class CategorySelection: ObservableObject {
 class CartItems: ObservableObject {
     @Published var items = [FoodCard]()
 }
+
+class PaymentCard :ObservableObject {
+    @Published var number = ""
+}
