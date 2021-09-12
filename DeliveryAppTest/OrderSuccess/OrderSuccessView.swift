@@ -9,10 +9,12 @@ import Lottie
 import SwiftUI
 
 struct OrderSuccessView: View {
+    @State var isPresented = false
+    
     var body: some View {
         VStack{
-        LottieView(name: "delivery", loopMode: .repeat(1))
-            .frame(width: 350, height: 350)
+            LottieView(name: "delivery", loopMode: .repeat(1))
+                .frame(width: 350, height: 350)
             Text("We will deliver to your doorsteps..!").font(.title3).padding()
             Text("Stay Home, Stay Safe!").font(.title3).fontWeight(.bold)
         }

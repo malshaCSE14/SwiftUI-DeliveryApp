@@ -51,6 +51,12 @@ class CartItems: ObservableObject {
     @Published var items = [FoodCard]()
 }
 
-class PaymentCard :ObservableObject {
-    @Published var number = ""
+class PaymentCard: ObservableObject {
+    @Published var card: String
+    @Published var brand: String
+    
+    init(card: String, brand: String) {
+        self.card = card
+        self.brand = brand
+    }
 }

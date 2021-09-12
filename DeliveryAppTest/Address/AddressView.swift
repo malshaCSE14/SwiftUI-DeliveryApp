@@ -59,7 +59,6 @@ struct AddressView: View {
     @StateObject private var mapSearch = MapSearch()
     
     var body: some View {
-        NavigationView {
             Form {
                 Section {
                     TextField("Address", text: $mapSearch.searchTerm)
@@ -76,7 +75,6 @@ struct AddressView: View {
                     }
                 }
             }.navigationTitle(Text("Delivery Address"))
-        }
     }
 }
 
@@ -106,11 +104,14 @@ class DetailViewModel : ObservableObject {
     }
 }
 
-struct Detail : View {
+struct Detail: View {
     var locationResult : MKLocalSearchCompletion
     @StateObject private var viewModel = DetailViewModel()
     @State var paymentMethod: Int
     @State var presentingModal = false
+    @State private var isSuccessViewPresented = false
+
+    @StateObject var cardDetails = PaymentCard(card: "", brand: "")
 
     struct Marker: Identifiable {
         let id = UUID()
@@ -126,10 +127,10 @@ struct Detail : View {
                     Map(coordinateRegion: $viewModel.region,
                         annotationItems: [Marker(location: MapMarker(coordinate: viewModel.coordinateForMap))]) { (marker) in
                         marker.location
-                    }
+                    }.padding(.top, 20)
                     Text("Delivery Address:").font(.title3).fontWeight(.semibold).padding([.leading, .top])
                     VStack(alignment: .leading) {
-                        Text(locationResult.title).fixedSize(horizontal: false, vertical: true)
+                        Text(locationResult.title).fixedSize(horizontal: false, vertical: true).padding(.bottom, 2)
                         Text(locationResult.subtitle).fixedSize(horizontal: false, vertical: true).foregroundColor(.secondary)
                         HStack {
                           Spacer()
@@ -146,13 +147,18 @@ struct Detail : View {
                         self.presentingModal = true
                         paymentMethod = 0
                     }) {
-                        Text("Add Card").fixedSize(horizontal: false, vertical: true)
+                        Image(systemName:"creditcard.fill").font(.title2)
+                        if !cardDetails.card.isEmpty {
+                            Text("\(cardDetails.brand) (\(cardDetails.card))").fixedSize(horizontal: false, vertical: true)
+                        } else {
+                            Text("Add Card").fixedSize(horizontal: false, vertical: true)
+                        }
                         Spacer()
                         if paymentMethod == 0 {
                             Image(systemName:"checkmark").foregroundColor(.green)
                                 .font(.title2)
                         }
-                    }.sheet(isPresented: $presentingModal) { AddCardView() }
+                    }.sheet(isPresented: $presentingModal) { AddCardView().environmentObject(cardDetails) }
                     .padding()
                     .background(Color("lightGray"))
                     .cornerRadius(8)
@@ -160,6 +166,7 @@ struct Detail : View {
                     Button(action: {
                         paymentMethod = 1
                     }) {
+                        Image(systemName:"banknote.fill").font(.title2)
                         Text("Cash On Delivery").fixedSize(horizontal: false, vertical: true)
                         Spacer()
                         if paymentMethod == 1 {

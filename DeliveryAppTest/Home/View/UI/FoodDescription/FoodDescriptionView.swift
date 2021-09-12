@@ -73,7 +73,7 @@ struct DescriptionView: View {
                 Image(systemName: "stopwatch").foregroundColor(.green)
                 Text("10-15 mins").foregroundColor(.gray)
             }.padding()
-            Text("multi lined food description. multi lined food description. multi lined food description").font(.footnote).foregroundColor(.gray).lineSpacing(8).padding([.bottom], 5)
+            Text("multi lined food description. multi lined food description. multi lined food description").font(.footnote).foregroundColor(.gray).lineSpacing(5).padding([.bottom], 5)
             TopingView()
             Spacer()
             HStack {

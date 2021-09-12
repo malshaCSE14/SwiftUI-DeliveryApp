@@ -77,7 +77,7 @@ struct FoodItem: View {
                 .frame(width: 100.0, height: 100.0)
                 .padding([.top, .bottom])
                 .padding([.leading, .trailing], 10)
-                .background(colors[getIndex() ?? 0])
+                .background(colors[(getIndex() ?? 0 % 3)])
                 .cornerRadius(25.0)
             VStack(alignment:.leading) {
                 Text("\(item.name)")

@@ -11,7 +11,8 @@ import SwiftUI
 
 struct AddCardView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentation
-    
+    @EnvironmentObject var cardDetails: PaymentCard
+
     func makeUIViewController(context: Context) -> UINavigationController {
         // Setup add card view controller
         let config = STPPaymentConfiguration.shared
@@ -34,22 +35,23 @@ struct AddCardView: UIViewControllerRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
+}
+
+class Coordinator: NSObject, STPAddCardViewControllerDelegate, UINavigationControllerDelegate {
+    var parent: AddCardView
+
+    func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
+        parent.presentation.wrappedValue.dismiss()
+    }
     
-    class Coordinator: NSObject, STPAddCardViewControllerDelegate, UINavigationControllerDelegate {
-        var parent: AddCardView
-        
-        func addCardViewControllerDidCancel(_ addCardViewController: STPAddCardViewController) {
-            parent.presentation.wrappedValue.dismiss()
-        }
-        
-        func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreatePaymentMethod paymentMethod: STPPaymentMethod, completion: @escaping STPErrorBlock) {
-            print(paymentMethod)
-            //            parent.model.isCards = true
-            parent.presentation.wrappedValue.dismiss()
-        }
-        
-        init(_ parent: AddCardView) {
-            self.parent = parent
-        }
+    func addCardViewController(_ addCardViewController: STPAddCardViewController, didCreatePaymentMethod paymentMethod: STPPaymentMethod, completion: @escaping STPErrorBlock) {
+        print(paymentMethod)
+        parent.cardDetails.card = paymentMethod.card?.last4 ?? ""
+        parent.cardDetails.brand = "\(paymentMethod.card?.networks?.available.first?.capitalized ?? "") - \(paymentMethod.card?.funding?.capitalized ?? "")"
+        parent.presentation.wrappedValue.dismiss()
+    }
+    
+    init(_ parent: AddCardView) {
+        self.parent = parent
     }
 }
